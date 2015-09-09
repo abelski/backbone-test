@@ -1,4 +1,4 @@
-define('TodoItemView', ['Backbone', 'Underscore', 'jQuery', 'text!templates/rowtemplate.html'], function (Backbone, _, $, rowtemplate) {
+define( ['Backbone', 'Underscore', 'jQuery', 'text!templates/rowtemplate.html'], function (Backbone, _, $, rowtemplate) {
     return Backbone.View.extend({
         initialize: function (options) {
             _.bindAll(this, 'render');

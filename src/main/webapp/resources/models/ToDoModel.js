@@ -1,3 +1,3 @@
-define('ToDoModel',['Backbone'],function(Backbone){
+define(['Backbone'],function(Backbone){
     return Backbone.Model.extend();
 });

@@ -1,4 +1,4 @@
-define('AppView', ['Backbone', 'Underscore', 'TodoItemView', '../collections/ToDoCollection', 'jQuery', 'text!templates/tabletemplate.html'], function (Backbone, _, TodoItemView, ToDoCollection, $, tabletemplate) {
+define(['Backbone', 'Underscore', 'views/TodoItemView', 'collections/ToDoCollection', 'jQuery', 'text!templates/tabletemplate.html'], function (Backbone, _, TodoItemView, ToDoCollection, $, tabletemplate) {
     return Backbone.View.extend({
         initialize: function () {
             _.bindAll(this, 'render');

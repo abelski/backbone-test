@@ -1,13 +1,11 @@
 require.config({
-    "baseUrl": "./",
+    baseUrl: "./",
     paths: {
-        AppView : "views/AppView",
-        ToDoCollection: "collections/ToDoCollection",
 
         jQuery: "//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min",
         Underscore: '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
         Backbone: '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.2/backbone-min',
-        text : '//cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text.min'
+        text: '//cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text.min'
     },
     shim: {
         jQuery: {
@@ -27,9 +25,9 @@ require.config({
     }
 });
 
-require(['jQuery',"Underscore","Backbone", "ToDoCollection", "AppView"], function($, _, Backbone, ToDoCollection, AppView){
-    $( document ).ready(function() {
-        console.log( "ready!" );
-        var view = new AppView({el : $("#view")});
+require(['jQuery', "Underscore", "Backbone", "collections/ToDoCollection", "views/AppView"], function ($, _, Backbone, ToDoCollection, AppView) {
+    $(document).ready(function () {
+        console.log("ready!");
+        var view = new AppView({el: $("#view")});
     });
 })
