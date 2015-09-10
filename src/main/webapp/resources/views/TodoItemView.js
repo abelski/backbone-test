@@ -1,4 +1,4 @@
-define( ['Backbone', 'Underscore', 'jQuery', 'text!templates/rowtemplate.html'], function (Backbone, _, $, rowtemplate) {
+define(['Backbone', 'Underscore', 'jQuery', 'text!templates/rowtemplate.html', 'views/EditTodoItemView'], function (Backbone, _, $, rowtemplate, EditView) {
     return Backbone.View.extend({
         initialize: function (options) {
             _.bindAll(this, 'render');
@@ -6,11 +6,17 @@ define( ['Backbone', 'Underscore', 'jQuery', 'text!templates/rowtemplate.html'],
             this.model = options.model;
         },
         events: {
-            "dblclick": "dblclick",
+            "click #edit": "edit",
+            "click #delete": "delete",
         },
 
-        dblclick: function () {
-            alert("11");
+        edit: function () {
+            var view = new EditView({'model': this.model});
+            $("#modal").append(view.render().$el);
+        },
+
+        delete: function () {
+            alert("delete");
         },
 
         tagName: "tr",
